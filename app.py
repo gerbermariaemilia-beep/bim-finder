@@ -56,8 +56,7 @@ st.markdown("""
 
 # --- 3. LOGIK ---
 st.title("Der BIM-Publikations-Assistent")
-st.write("Willkommen beim BIM-Publikations-Assistenten. Beschreiben Sie kurz Ihre aktuelle BIM-Herausforderung oder das Thema, dass Sie vertiefen möchten. Unser Assistent durchsucht unseren Fachkatalog und empfehlt Ihnen in Sekunden die Publikation, die Sie bei Ihrem Projekt definitiv weiterbrigt.")
-st.write("Ihr bSD-Verlagsteam")
+st.write("Willkommen beim BIM-Publikations-Assistenten. Beschreiben Sie kurz Ihre aktuelle BIM-Herausforderung oder das Thema, dass Sie vertiefen möchten. Unser Assistent durchsucht unseren Fachkatalog und empfehlt Ihnen in Sekunden die Publikation, die Sie definitiv weiterbrigt.")
 st.divider()
 
 @st.cache_data
