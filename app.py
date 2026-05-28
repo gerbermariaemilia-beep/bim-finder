@@ -3,6 +3,36 @@ import google.generativeai as genai
 import pandas as pd
 import os
 
+# --- CSS STYLING ---
+st.markdown("""
+    <style>
+    /* Hintergrundfarbe der App */
+    .stApp {
+        background-color: #f8f9fa;
+    }
+    /* Design des Buttons */
+    div.stButton > button {
+        background-color: #004a99;
+        color: white;
+        border-radius: 10px;
+        font-weight: bold;
+        border: none;
+        width: 100%;
+        height: 50px;
+    }
+    /* Schriftart anpassen */
+    html, body, [class*="st-"] {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+    /* Ergebnis-Box schöner machen */
+    .stSuccess {
+        background-color: #e1f5fe;
+        border: 1px solid #b3e5fc;
+        color: #01579b;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # --- 1. KONFIGURATION ---
 # Versucht, den Key aus den Streamlit-Secrets (Cloud) oder der Umgebung (lokal) zu laden
 try:
