@@ -55,8 +55,8 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # --- 3. LOGIK ---
-st.title("📚 BIM Publikations-Finder")
-st.write("Beschreiben Sie Ihre Herausforderung. Unsere KI analysiert den Katalog.")
+st.title("Der BIM-Publikations-Assistent")
+st.write("Willkommen beim BIM-Publikations-Assistenten. Beschreiben Sie kurz Ihre aktuelle BIM-Herausforderung oder das Thema, dass Sie vertiefen möchten. Unser Assistent durchsucht unseren Fachkatalog und empfehlt Ihnen in Sekunden die Publikation, die Sie bei Ihrem Projekt definitiv weiterbrigt.)
 st.divider()
 
 @st.cache_data
