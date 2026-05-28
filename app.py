@@ -18,7 +18,7 @@ st.markdown("""
     <style>
     /* Grund-Schriftart und Farbe */
     html, body, [class*="st-"] {
-        font-family: sans-serif; /* Favourit Pro falls installiert */
+        font-family: sans-serif;
         color: #032B5E !important;
     }
     
@@ -31,10 +31,11 @@ st.markdown("""
         border: 2px solid #032B5E !important;
     }
 
-    /* Buttons: Blaues Design mit weißer Schrift */
+    /* Buttons: Blaues Design mit weißer Schrift (erzwungen) */
     div.stButton > button {
         background-color: #032B5E !important;
         color: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
         border: none !important;
         border-radius: 5px !important;
         font-weight: bold !important;
@@ -46,6 +47,7 @@ st.markdown("""
     div.stButton > button:hover {
         background-color: #EC1616 !important;
         color: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
     }
     
     h1 { color: #032B5E !important; }
@@ -68,7 +70,7 @@ except:
     st.error("Katalog-Datei 'katalog.csv' nicht gefunden!")
     st.stop()
 
-# Session State für Textfeld
+# Session State für das Textfeld
 if 'input_text' not in st.session_state:
     st.session_state.input_text = ""
 
@@ -107,7 +109,7 @@ if suchen_btn:
             2. Wenn nichts passt, antworte freundlich, dass wir dazu keine Publikation führen.
             3. Antworte in 3-4 Sätzen. Nenne den Titel in **Fett** sowie den Link.
 
-            Herausforderung des Nutzers: {problem_beschreibung}
+            Herausforderung: {problem_beschreibung}
             """
             try:
                 model = genai.GenerativeModel('gemini-2.5-flash')
