@@ -7,10 +7,6 @@ import pandas as pd
 # Für den lokalen Test kannst du st.secrets["API_KEY"] durch deinen echten String ersetzen
 try:
     genai.configure(api_key=st.secrets["API_KEY"])
-except:
-    # Fallback für lokales Testen ohne Secrets-Datei:
-    # Ersetze den String unten mit deinem tatsächlichen API-Key
-    genai.configure(api_key="AIzaSyBJZvQAic1Im6JE0zk1aoucYz-lrS5k_28")
 
 # --- 2. DESIGN & LAYOUT ---
 st.set_page_config(page_title="BIM Katalog", page_icon="📚", layout="centered")
