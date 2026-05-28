@@ -16,31 +16,33 @@ except Exception as e:
 # --- 2. CSS STYLING ---
 st.markdown("""
     <style>
+    /* Grund-Schriftart und Farbe */
     html, body, [class*="st-"] {
-        font-family: 'Favourit Pro', sans-serif !important;
+        font-family: sans-serif; /* Favourit Pro falls installiert */
         color: #032B5E !important;
     }
+    
     .stApp { background-color: #FFFFFF; }
-    
-    [data-baseweb="textarea"] {
+
+    /* Eingabefeld: Weißer Hintergrund, Blaue Schrift, Blauer Rahmen */
+    .stTextArea textarea {
         background-color: #FFFFFF !important;
-        border: 2px solid #032B5E !important;
         color: #032B5E !important;
+        border: 2px solid #032B5E !important;
     }
-    
-    /* Button Design */
+
+    /* Buttons: Blaues Design mit weißer Schrift */
     div.stButton > button {
         background-color: #032B5E !important;
         color: #FFFFFF !important;
-        border-radius: 5px;
-        font-weight: bold;
-        border: none;
+        border: none !important;
+        border-radius: 5px !important;
+        font-weight: bold !important;
         width: 100%;
         height: 50px;
-        transition: 0.3s;
     }
-    
-    /* Button Hover Effekt */
+
+    /* Button Hover Effekt: Rot */
     div.stButton > button:hover {
         background-color: #EC1616 !important;
         color: #FFFFFF !important;
@@ -66,10 +68,11 @@ except:
     st.error("Katalog-Datei 'katalog.csv' nicht gefunden!")
     st.stop()
 
-# Session State für das Textfeld
+# Session State für Textfeld
 if 'input_text' not in st.session_state:
     st.session_state.input_text = ""
 
+# Eingabefeld
 problem_beschreibung = st.text_area(
     "Wo hakt es in Ihrem Projekt?", 
     value=st.session_state.input_text,
@@ -77,7 +80,7 @@ problem_beschreibung = st.text_area(
     height=150
 )
 
-# Buttons nebeneinander (Suchen links, Löschen rechts)
+# Buttons: Suchen links (breit), Löschen rechts (schmal)
 col1, col2 = st.columns([3, 1])
 
 with col1:
@@ -104,7 +107,7 @@ if suchen_btn:
             2. Wenn nichts passt, antworte freundlich, dass wir dazu keine Publikation führen.
             3. Antworte in 3-4 Sätzen. Nenne den Titel in **Fett** sowie den Link.
 
-            Herausforderung: {problem_beschreibung}
+            Herausforderung des Nutzers: {problem_beschreibung}
             """
             try:
                 model = genai.GenerativeModel('gemini-2.5-flash')
